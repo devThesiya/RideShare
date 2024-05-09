@@ -1,27 +1,28 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { OnBoarding1, OnBoarding2, OnBoarding3 } from '../screens/AuthScreens';
-import { ONBOARDING1, ONBOARDING2, ONBOARDING3 } from './routes';
+import {createStackNavigator} from '@react-navigation/stack';
+import {OnBoarding1, OnBoarding2, OnBoarding3} from '../screens/AuthScreens';
+import {ONBOARDING1, ONBOARDING2, ONBOARDING3} from './routes';
+import {CardStyleInterpolators} from '@react-navigation/stack';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const OnBoardingNavigator = () => {
   const screens = [
     {
       name: ONBOARDING1,
       component: OnBoarding1,
-      options: {headerShown: true},
+      options: {},
     },
     {
       name: ONBOARDING2,
       component: OnBoarding2,
-      options: {headerShown: true},
+      options: {},
     },
     {
       name: ONBOARDING3,
       component: OnBoarding3,
-      options: {headerShown: true},
+      options: {},
     },
   ];
   return (
@@ -30,6 +31,7 @@ const OnBoardingNavigator = () => {
         initialRouteName={ONBOARDING1}
         screenOptions={{
           headerShadowVisible: false,
+
           headerTitleAlign: 'center',
           headerBackTitleVisible: true,
         }}>
@@ -39,7 +41,10 @@ const OnBoardingNavigator = () => {
               key={screen.name}
               name={screen.name}
               component={screen.component}
-              options={screen.options}
+              options={{
+                headerShown: false,
+                cardStyleInterpolator: CardStyleInterpolators.forFadeFromCenter,
+              }}
             />
           );
         })}
