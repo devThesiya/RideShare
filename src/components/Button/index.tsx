@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 interface ButtonProp {
@@ -12,7 +6,7 @@ interface ButtonProp {
   NavigateTo: string;
 }
 
-const Button = ({title, NavigateTo}: ButtonProp) => {
+export const Button = ({title, NavigateTo}: ButtonProp) => {
   return (
     <TouchableOpacity style={styles.container} onPress={() => {}}>
       <Text style={styles.text}>{title}</Text>
@@ -20,22 +14,34 @@ const Button = ({title, NavigateTo}: ButtonProp) => {
   );
 };
 
-export default Button;
+export const ButtonTransparent = ({title, NavigateTo}: ButtonProp) => {
+  return (
+    <TouchableOpacity
+      style={{
+        ...styles.container,
+        backgroundColor: 'transparent',
+        borderWidth: 1,
+        borderColor: '#008955',
+      }}
+      onPress={() => {}}>
+      <Text style={{...styles.text, color: '#008955'}}>{title}</Text>
+    </TouchableOpacity>
+  );
+};
+
 const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   container: {
-    // marginTop: 'auto',
     width: width - 40,
     borderRadius: 8,
     backgroundColor: '#008955',
     alignItems: 'center',
     justifyContent: 'center',
     height: 50,
-    // borderWidth: 1,
   },
   text: {
     color: '#fff',
     fontSize: 16,
-    fontWeight: '500'
+    fontWeight: '500',
   },
 });

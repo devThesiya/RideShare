@@ -1,7 +1,7 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import React from 'react';
 import {img_WelcomeScreen} from '../../assets/images';
-import {Button, OTPInput} from '../../components';
+import {Button, ButtonTransparent, OTPInput} from '../../components';
 
 const WelComeScreen = () => (
   <View style={styles.container}>
@@ -14,20 +14,14 @@ const WelComeScreen = () => (
     <View style={styles.SubTextContainer}>
       <Text style={styles.SubText}>Have a better sharing experince</Text>
     </View>
-    {/* <View style={{marginTop: 150}}>
-          <View style={{marginBottom: 15}}>
-            <Button title={'Create an account'} NavigateTo={''} />
-          </View>
-          <View>
-            <Button title={'Log In'} NavigateTo={''} />
-          </View>
-        </View> */}
-    <OTPInput
-      length={6}
-      value={[]}
-      disabled={false}
-      onChange={() => {}}
-    />
+    <View style={{marginTop: 150}}>
+      <View style={{marginBottom: 15}}>
+        <Button title={'Create an account'} NavigateTo={''} />
+      </View>
+      <View>
+        <ButtonTransparent title={'Log In'} NavigateTo={''} />
+      </View>
+    </View>
   </View>
 );
 
