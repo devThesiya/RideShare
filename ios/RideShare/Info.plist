@@ -33,7 +33,11 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>app needs location access to provide features</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your app needs location even in the background to .</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need your permission to use your camera.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
