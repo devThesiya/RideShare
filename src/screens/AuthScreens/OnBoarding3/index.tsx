@@ -10,7 +10,7 @@ const OnBoarding3 = ({navigation}: any) => {
   const fadeIn = () => {
     Animated.timing(fadeAnim, {
       toValue: 1,
-      duration: 1000,
+      duration: 600,
       useNativeDriver: true,
     }).start();
   };
