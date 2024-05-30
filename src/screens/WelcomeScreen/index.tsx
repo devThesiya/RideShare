@@ -28,39 +28,30 @@ const WelComeScreen = () => (
 export default WelComeScreen;
 const styles = StyleSheet.create({
   container: {
-    // marginTop: 'auto',
-    // flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    // paddingHorizontal: 20
   },
   ImageContainer: {
     marginTop: 50,
     marginBottom: 25,
     width: '100%',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   image: {
     width: '100%',
     height: 300,
-    // borderWidth: 1,
   },
   TitleTextContainer: {
-    // borderWidth: 1,
     marginBottom: 15,
   },
-  SubTextContainer: {
-    // borderWidth: 1
-  },
+  SubTextContainer: {},
   TitleText: {
     fontSize: 24,
-    fontWeight: '500',
+    fontFamily: 'Poppins-Medium',
     color: '#414141',
   },
   SubText: {
     fontSize: 16,
-    fontWeight: '400',
+    fontFamily: 'Poppins-Regular',
     color: '#A0A0A0',
   },
 });

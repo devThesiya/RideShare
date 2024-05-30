@@ -7,14 +7,21 @@ import {
   View,
 } from 'react-native';
 
-interface OTPInputProps  {
+interface OTPInputProps {
   length: number;
   value: Array<string>;
   disabled: boolean;
-  onChange(value: Array<string>): void;
-};
+  onChange(value: string, index: number): void;
+  onBackSpace(value: number): void;
+}
 
-const OTPInput = ({length, disabled, value, onChange}: OTPInputProps) => {
+const OTPInput = ({
+  length,
+  disabled,
+  value,
+  onChange,
+  onBackSpace,
+}: OTPInputProps) => {
   // const { styles } = useStyles(stylesheet)
   const inputRefs = useRef<Array<Nullable<TextInput>>>([]);
 
@@ -26,8 +33,7 @@ const OTPInput = ({length, disabled, value, onChange}: OTPInputProps) => {
 
       return item;
     });
-
-    onChange(newValue);
+    onChange(newValue[index], index);
   };
 
   const handleChange = (text: string, index: number) => {
@@ -47,6 +53,7 @@ const OTPInput = ({length, disabled, value, onChange}: OTPInputProps) => {
     const {nativeEvent} = event;
 
     if (nativeEvent.key === 'Backspace') {
+      onBackSpace(index);
       handleChange('', index);
     }
   };
@@ -78,7 +85,7 @@ const OTPInput = ({length, disabled, value, onChange}: OTPInputProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    width: 'auto',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

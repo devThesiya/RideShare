@@ -5,6 +5,8 @@ import PermissionScreen from './PermissionScreen';
 import AsyncStorageExample from './AsyncStorageExample';
 import MMKVExample from './MMKVExample';
 import WelComeScreen from './WelcomeScreen';
+import SendVerification from './SendVerification';
+import VerifyOTP from './VerifyOTP';
 
 export {
   OnBoarding1,
@@ -14,4 +16,6 @@ export {
   AsyncStorageExample,
   MMKVExample,
   WelComeScreen,
+  SendVerification,
+  VerifyOTP,
 };

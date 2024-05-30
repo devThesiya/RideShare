@@ -4,11 +4,12 @@ import React from 'react';
 interface ButtonProp {
   title: string;
   NavigateTo: string;
+  onClick(): void;
 }
 
-export const Button = ({title, NavigateTo}: ButtonProp) => {
+export const Button = ({title, NavigateTo, onClick}: ButtonProp) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={() => {}}>
+    <TouchableOpacity style={styles.container} onPress={onClick}>
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
@@ -42,6 +43,6 @@ const styles = StyleSheet.create({
   text: {
     color: '#fff',
     fontSize: 16,
-    fontWeight: '500',
+    fontFamily: 'Poppins-Medium'
   },
 });
