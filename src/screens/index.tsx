@@ -7,6 +7,8 @@ import MMKVExample from './MMKVExample';
 import WelComeScreen from './WelcomeScreen';
 import SendVerification from './SendVerification';
 import VerifyOTP from './VerifyOTP';
+import SetPassword from './SetPassword';
+import SignIn from './SignIn';
 
 export {
   OnBoarding1,
@@ -18,4 +20,6 @@ export {
   WelComeScreen,
   SendVerification,
   VerifyOTP,
+  SetPassword,
+  SignIn,
 };

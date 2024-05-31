@@ -30,6 +30,7 @@ const VerifyOTP = () => {
       return acc + crr;
     }, '');
     console.log('OTP is: ', otp);
+    console.log(typeof otp)
     if (otp === '12345') {
       console.log('YAYAY correct');
     } else {
@@ -40,6 +41,7 @@ const VerifyOTP = () => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? -10 : 20}
       style={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{flex: 1, alignItems: 'center'}}>
@@ -117,6 +119,6 @@ const styles = StyleSheet.create({
   },
   Button: {
     position: 'absolute',
-    bottom: 40,
+    bottom: 25,
   },
 });

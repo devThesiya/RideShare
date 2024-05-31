@@ -10,7 +10,7 @@ const SendVerification = () => {
       </View>
       <Input placeholder={'Email or phone number'} />
       <View style={styles.ButtonContainer}>
-        <Button title={'Send OTP'} NavigateTo={''}/>
+        <Button title={'Send OTP'} NavigateTo={''} onClick={()  => {}}/>
       </View>
     </View>
   );

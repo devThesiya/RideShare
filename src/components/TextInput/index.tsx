@@ -28,7 +28,7 @@ export default Input;
 const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
-    height: 60,
+    height: 54,
     justifyContent: 'center',
     // alignItems:  'center',
     paddingHorizontal: 20,
