@@ -33,7 +33,7 @@ export const ButtonTransparent = ({title, NavigateTo}: ButtonProp) => {
 const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   container: {
-    width: width - 40,
+    width: '100%',
     borderRadius: 8,
     backgroundColor: '#008955',
     alignItems: 'center',

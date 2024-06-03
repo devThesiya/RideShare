@@ -6,6 +6,7 @@ import {
   Platform,
   TouchableWithoutFeedback,
   Keyboard,
+  Pressable,
 } from 'react-native';
 import React, {useState} from 'react';
 import {Button, OTPInput} from '../../components';
@@ -30,7 +31,7 @@ const VerifyOTP = () => {
       return acc + crr;
     }, '');
     console.log('OTP is: ', otp);
-    console.log(typeof otp)
+    console.log(typeof otp);
     if (otp === '12345') {
       console.log('YAYAY correct');
     } else {
@@ -60,18 +61,11 @@ const VerifyOTP = () => {
               onBackSpace={HandleBackSpace}
             />
           </View>
-          <View>
-            <Text style={styles.FallBackText}>
-              Didn't receive code?
-              <Text
-                style={styles.HighlightText}
-                onPress={() => {
-                  console.log('clicked');
-                }}>
-                {' '}
-                Resend again
-              </Text>
-            </Text>
+          <View style={{flexDirection: 'row'}}>
+            <Text style={styles.FallBackText}>Didn't receive code?</Text>
+            <Pressable style={({pressed}) => [{opacity: pressed ? 0.5 : 1.0}]}>
+              <Text style={styles.HighlightText}> Resend again</Text>
+            </Pressable>
           </View>
           <View style={styles.Button}>
             <Button title={'Verify'} NavigateTo={''} onClick={handleClick} />
@@ -115,6 +109,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
   },
   HighlightText: {
+    fontSize: 16,
+    fontFamily: 'Poppins-Medium',
     color: '#008955',
   },
   Button: {

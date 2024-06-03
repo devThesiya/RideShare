@@ -73,7 +73,7 @@ const OTPInput = ({
           selectTextOnFocus
           editable={!disabled}
           style={styles.input}
-          // keyboardType="decimal-pad"
+          keyboardType="decimal-pad"
           testID={`OTPInput-${index}`}
           onChangeText={text => handleChange(text, index)}
           onKeyPress={event => handleBackspace(event, index)}
